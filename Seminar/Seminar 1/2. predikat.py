@@ -8,9 +8,9 @@ def proof():
         for y in (range(2)):
             for z in (range(2)):
                 print(f"{x = } {y = } {z = }  {not(x or y or z) == (not x and not y and not z)}")
+    if result == True:
+        print("Утверждение истинно")
+    else:
+        print("Утверждение ложно")
 
 proof()
-if result == True:
-    print("Утверждение истинно")
-else:
-    print("Утверждение ложно")
