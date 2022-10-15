@@ -1,4 +1,5 @@
-# Реализуйте алгоритм перемешивания списка.
+# Задайте список из нескольких чисел. Напишите программу, которая
+# найдёт сумму элементов списка, стоящих на нечётной позиции.
 
 import random
 
@@ -27,16 +28,13 @@ def create_random_lst(size):
     return lst
 
 
-def shuffle_lst(lst):
-    for i in range(len(lst)):
-        rnd = random.randint(0, len(lst))
-        lst[i], lst[rnd] = lst[rnd], lst[i]
-        return lst
-        
-    
+def sum_odd_number(lst):
+    sum = 0
+    for i in range(1, len(lst),2):
+        sum = lst[i] + sum
+    return sum
 
 
-my_list = create_random_lst(input_num())
-print(f'Рандомный список выглядит так: {my_list}')
-
-print(f'Перемешанный список выглядит так: {shuffle_lst(my_list)}')
+my_lst = create_random_lst(input_num())
+print(my_lst)
+print(f'Сумма чисел стоящих на нечетной позиции равна: {sum_odd_number(my_lst)}')

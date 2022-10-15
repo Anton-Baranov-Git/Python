@@ -1,4 +1,7 @@
-# Реализуйте алгоритм перемешивания списка.
+# Напишите программу, которая найдёт произведение пар чисел списка.
+# Парой считаем первый и последний элемент, второй и предпоследний и т.д.
+
+
 
 import random
 
@@ -27,16 +30,17 @@ def create_random_lst(size):
     return lst
 
 
-def shuffle_lst(lst):
-    for i in range(len(lst)):
-        rnd = random.randint(0, len(lst))
-        lst[i], lst[rnd] = lst[rnd], lst[i]
-        return lst
+def sum_pair_number(lst):
+    current = 1
+    new_lst = []
+    for i in range(int(len(lst) / 2 + 1)):
+        new_lst.append(lst[i] * lst[-current])
+        current += 1
+    return new_lst
         
-    
 
 
-my_list = create_random_lst(input_num())
-print(f'Рандомный список выглядит так: {my_list}')
+my_lst = create_random_lst(input_num())
+print(my_lst)
+print(sum_pair_number(my_lst))
 
-print(f'Перемешанный список выглядит так: {shuffle_lst(my_list)}')
